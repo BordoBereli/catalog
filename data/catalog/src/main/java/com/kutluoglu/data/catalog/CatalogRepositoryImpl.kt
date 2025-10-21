@@ -29,4 +29,13 @@ class CatalogRepositoryImpl(
 			}
 		}
 	}
+
+	override suspend fun getProductById(id: Int): Result<Product> {
+		return try {
+			val productEntity = api.getProductById(id).toProductEntity()
+			Result.Success(productEntity.toProduct())
+		} catch (e: Exception) {
+			Result.Error(e)
+		}
+	}
 }

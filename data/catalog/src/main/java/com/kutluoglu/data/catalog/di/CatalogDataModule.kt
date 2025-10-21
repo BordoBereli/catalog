@@ -40,13 +40,6 @@ object CatalogDataModule {
 			// Use the Moshi instance you just created
 			.addConverterFactory(MoshiConverterFactory.create(moshi))
 			.build()
-	/*@Single
-	fun retrofit(okHttpClient: OkHttpClient): Retrofit =
-		Retrofit.Builder()
-			.baseUrl("https://dummyjson.com/") // replace with real base URL
-			.client(okHttpClient)
-			.addConverterFactory(MoshiConverterFactory.create())
-			.build()*/
 
 	@Single
 	fun catalogApi(retrofit: Retrofit): CatalogApi =
