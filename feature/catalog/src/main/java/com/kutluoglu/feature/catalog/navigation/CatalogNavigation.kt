@@ -24,15 +24,8 @@ fun NavGraphBuilder.catalogGraph(navController: NavController) {
     composable(Screen.ProductDetail.route,
         arguments = listOf(navArgument("productId") { type = NavType.IntType })
     ) { backStackEntry ->
-//        val productId = backStackEntry.arguments?.getString("productId")
         ProductDetailScreen(
             onNavigateUp = { navController.navigateUp() }
         )
-//        ProductDetailScreen(
-//            productId = productId
-//            ?: throw IllegalArgumentException("Product ID not provided"),
-//            onNavigateBack = { navController.popBackStack() },
-//            onNavigateUp = { navController.navigateUp() }
-//        )
     }
 }
